@@ -1,16 +1,32 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+// Standard CDK imports
+import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
+
+// Custom Constructs Imports
+import { BotMicroservice } from "./microservice";
+import { BotApiGateway } from "./apigateway";
+import { Construct } from "constructs";
 
 export class TelegramBotStack extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
+  /**
+   *
+   * @param {Construct} scope
+   * @param {string} id
+   * @param {StackProps=} props
+   */
+  constructor(scope: Construct, id: string, props: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    // Create the Bot Microservices
+    const botMicroservice = new BotMicroservice(this, "Microservice");
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'TelegramBotQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    // Create the Bot Api Gateway
+    const restApiId = new BotApiGateway(this, "ApiGateway", {
+      telegramBotMicroservice: botMicroservice.telegramBotMicroservice,
+    });
+
+    // All constructs take these same three arguments : scope, id/name, props
+    new CfnOutput(this, "BotURL", {
+      value: `https://${restApiId}.execute-api.${this.region}.amazonaws.com/dev/bot`,
+    });
   }
 }
