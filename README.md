@@ -1,6 +1,4 @@
-# Welcome to your CDK TypeScript project
-
-This is a blank project for CDK development with TypeScript.
+# Welcome to Serverless-Telegram-Bot
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
