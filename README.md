@@ -62,6 +62,12 @@ Here you will learn to use CDK to deploy different AWS resources.
 
    https://api.telegram.org/bot{bot_token}/setWebhook?url={url_to_send_updates_to}
 
+   # Get Webhook Info which will contain info on pending replies count and last response(OPTIONAL)
+   https://api.telegram.org/bot{bot_token}/getWebhookInfo?url={url_to_send_updates_to}
+
+   # Delete webhook and stop pushing message to API Gateway URL.
+   https://api.telegram.org/bot{bot_token}/deleteWebhook?url={url_to_send_updates_to}
+
    ```
 
 1. ## 🧹 CleanUp
