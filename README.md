@@ -72,7 +72,7 @@ Here you will learn to use CDK to deploy different AWS resources.
 
 1. ## :camera: Screenshot
    <div>
-      <img src="./example/RNSearch/assets/screenshot.png">
+   <img width="1249" alt="image" src="https://user-images.githubusercontent.com/15178258/199100708-11c06cee-3d62-4063-9698-b81f01c67d82.png">
    </div>
 
 1. ## 🧹 CleanUp
