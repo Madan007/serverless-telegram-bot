@@ -29,12 +29,38 @@ Here you will learn to use CDK to deploy different AWS resources.
    ```bash
    # If you DONT have cdk installed
    npm install -g aws-cdk
+
    # If this is first time you are using cdk then, run cdk bootstrap
    # cdk bootstrap
 
    # Synthesize the template and deploy it
    cdk synth
    cdk deploy
+
+   # Keep Note for easy access of Outputs:
+   #TelegramBotStack.BotURL
+   #TelegramBotStack.BotWebhookUrl
+   #TelegramBotStack.LambdaCloudwatchLogURL
+   ```
+
+1. ## 👷🏾 Telegram Bot Setup
+
+   ```bash
+   # search for "BotFather" bot in Telegram search bar
+    Select /newbot
+    Provide Bot Name
+    Provide unique username
+
+   # Save the API KEY token which would be required to access telegram APIs
+   # Telegram Bot Access Link
+    https://t.me/{Name_of_the_bot}
+
+   # Webhook Setup
+   #bot_token=Collected while creating new telegram bot.
+   #url_to_send_updates_to = BotWebhookURL from cdk deploy outputs or from AWS Api Gateway wekbook endpoint link.
+
+   https://api.telegram.org/bot{bot_token}/setWebhook?url={url_to_send_updates_to}
+
    ```
 
 1. ## 🧹 CleanUp
