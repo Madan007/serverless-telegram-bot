@@ -10,7 +10,7 @@ import { Construct } from "constructs";
 const path = require("path");
 
 // TODO: Need to Move To Env File
-const BOT_TOKEN = ""; // PASTE Telegram API BOT TOKEN here
+const BOT_TOKEN = "5451397815:AAGzslehiZTDH5kOomJ67BAZ6F62xt8oo9s"; // PASTE Telegram API BOT TOKEN here
 
 export class BotMicroservice extends Construct {
   public readonly telegramBotMicroservice: Function;

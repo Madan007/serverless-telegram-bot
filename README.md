@@ -70,15 +70,20 @@ Here you will learn to use CDK to deploy different AWS resources.
 
    ```
 
+   1. ## :camera: Screenshot
+   <div>
+      <img src="./example/RNSearch/assets/screenshot.png">
+   </div>
+
 1. ## 🧹 CleanUp
 
-   If you want to destroy all the resources created by the AWS Cloudfront stack, Execute the below command to delete the stack, or _you can delete the stack from console as well_
+If you want to destroy all the resources created by the AWS Cloudfront stack, Execute the below command to delete the stack, or _you can delete the stack from console as well_
 
-   ```bash
-   cdk destroy *
-   ```
+```bash
+cdk destroy *
+```
 
-   This is not an exhaustive list, please carry out other necessary steps as maybe applicable to your needs.
+This is not an exhaustive list, please carry out other necessary steps as maybe applicable to your needs.
 
 ### 💡 Help/Suggestions or 🐛 Bugs
 
