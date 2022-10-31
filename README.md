@@ -4,6 +4,7 @@ Here you will learn to use CDK to deploy different AWS resources.
 
 1. ## 🧰 Prerequisites
 
+   - 🛠 AWS Free Tier Account & Configured - [Get help here](https://www.youtube.com/watch?v=FRQ9fE4fd5g)
    - 🛠 AWS CLI Installed & Configured - [Get help here](https://youtu.be/TPyyfmQte0U)
    - 🛠 AWS CDK Installed & Configured - [Get help here](https://www.youtube.com/watch?v=MKwxpszw0Rc)
    - 🛠 Node JS Runtime - [Get help here](https://www.youtube.com/watch?v=TQks1p7xjdI)
@@ -33,7 +34,7 @@ Here you will learn to use CDK to deploy different AWS resources.
    # If this is first time you are using cdk then, run cdk bootstrap
    # cdk bootstrap
 
-   # Synthesize the template and deploy it
+   # Synthesize the template and deploy it to AWS stack
    cdk synth
    cdk deploy
 
@@ -65,7 +66,7 @@ Here you will learn to use CDK to deploy different AWS resources.
 
 1. ## 🧹 CleanUp
 
-   If you want to destroy all the resources created by the stack, Execute the below command to delete the stack, or _you can delete the stack from console as well_
+   If you want to destroy all the resources created by the AWS Cloudfront stack, Execute the below command to delete the stack, or _you can delete the stack from console as well_
 
    ```bash
    cdk destroy *
