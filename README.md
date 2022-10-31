@@ -6,7 +6,7 @@ Here you will learn to use CDK to deploy different AWS resources.
 
    - 🛠 AWS CLI Installed & Configured - [Get help here](https://youtu.be/TPyyfmQte0U)
    - 🛠 AWS CDK Installed & Configured - [Get help here](https://www.youtube.com/watch?v=MKwxpszw0Rc)
-   - 🛠 Node JS Runtime, _Change the commands to suit your operating system, the following are written for \_Amazon Linux 2_
+   - 🛠 Node JS Runtime - [Get help here](https://www.youtube.com/watch?v=TQks1p7xjdI)
 
 1. ## ⚙️ Setting up the environment
 
