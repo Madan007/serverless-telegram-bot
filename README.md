@@ -94,7 +94,7 @@ Thank you for your interest in contributing to our project. Whether it is a bug 
 
 - [AWS](https://aws.amazon.com/)
 - [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
-- [Typescript](https://www.typescriptlang.org/docs/)
+- [Typescript](https://www.typescriptlang.org/docs)
 - [Node.Js](https://nodejs.org/en/docs/)
 
 ### :man: Author
