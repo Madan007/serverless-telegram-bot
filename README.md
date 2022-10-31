@@ -37,10 +37,10 @@ Here you will learn to use CDK to deploy different AWS resources.
    cdk synth
    cdk deploy
 
-   # Keep Note for easy access of Outputs:
-   #TelegramBotStack.BotURL
-   #TelegramBotStack.BotWebhookUrl
-   #TelegramBotStack.LambdaCloudwatchLogURL
+   # Keep Note of Outputs: for easy access
+    -TelegramBotStack.BotURL
+    -TelegramBotStack.BotWebhookUrl
+    -TelegramBotStack.LambdaCloudwatchLogURL
    ```
 
 1. ## 👷🏾 Telegram Bot Setup
