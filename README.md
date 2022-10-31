@@ -1,12 +1,58 @@
-# Welcome to Serverless-Telegram-Bot
+# Welcome to Serverless-Telegram-Bot[s]
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Here you will learn to use CDK to deploy different AWS resources.
 
-## Useful commands
+1. ## 🧰 Prerequisites
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+   - 🛠 AWS CLI Installed & Configured - [Get help here](https://youtu.be/TPyyfmQte0U)
+   - 🛠 AWS CDK Installed & Configured - [Get help here](https://www.youtube.com/watch?v=MKwxpszw0Rc)
+   - 🛠 Node JS Runtime, _Change the commands to suit your operating system, the following are written for \_Amazon Linux 2_
+
+1. ## ⚙️ Setting up the environment
+
+   Providing the detailed instructions for project setup.
+
+   ```bash
+   git clone --branch main https://github.com/Madan007/serverless-telegram-bot.git
+   cd serverless-telegram-bot
+
+   # Make sure you in root directory
+   npm install
+
+   # Install microservice feature dependencies
+   cd src/telegram-bot
+   npm install
+   ```
+
+1. ## 🚀 Deployment using AWS CDK
+
+   ```bash
+   # If you DONT have cdk installed
+   npm install -g aws-cdk
+   # If this is first time you are using cdk then, run cdk bootstrap
+   # cdk bootstrap
+
+   # Synthesize the template and deploy it
+   cdk synth
+   cdk deploy
+   ```
+
+1. ## 🧹 CleanUp
+
+   If you want to destroy all the resources created by the stack, Execute the below command to delete the stack, or _you can delete the stack from console as well_
+
+   ```bash
+   cdk destroy *
+   ```
+
+   This is not an exhaustive list, please carry out other necessary steps as maybe applicable to your needs.
+
+### 💡 Help/Suggestions or 🐛 Bugs
+
+Thank you for your interest in contributing to our project. Whether it is a bug report, new feature, correction, or additional documentation or solutions, we greatly value feedback and contributions from our community. [Start here][200]
+
+### 🏷️ Metadata
+
+**Level**: 200
+
+![miztiik-success-green](https://img.shields.io/badge/miztiik-cdk-success-green)
