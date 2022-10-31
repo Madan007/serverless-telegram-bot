@@ -70,7 +70,7 @@ Here you will learn to use CDK to deploy different AWS resources.
 
    ```
 
-   1. ## :camera: Screenshot
+1. ## :camera: Screenshot
    <div>
       <img src="./example/RNSearch/assets/screenshot.png">
    </div>
