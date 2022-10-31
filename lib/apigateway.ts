@@ -1,12 +1,10 @@
 import { IFunction } from "aws-cdk-lib/aws-lambda";
 import {
-  CfnRestApiProps,
+  Cors,
   Deployment,
-  GatewayResponse,
+  IRestApi,
   LambdaIntegration,
-  LambdaRestApi,
   RestApi,
-  RestApiAttributes,
   Stage,
 } from "aws-cdk-lib/aws-apigateway";
 import { Construct } from "constructs";
@@ -16,7 +14,7 @@ interface BotApiGatewayProps {
 }
 
 export class BotApiGateway extends Construct {
-  public readonly telegramBotAPI: string;
+  public readonly telegramBotAPI: IRestApi;
 
   constructor(scope: Construct, id: string, props: BotApiGatewayProps) {
     super(scope, id);
@@ -30,23 +28,46 @@ export class BotApiGateway extends Construct {
   /**
    * @param {IFunction} telegramBotMicroservice
    */
-  private createtelegramBotAPI(telegramBotMicroservice: IFunction): string {
+  private createtelegramBotAPI(telegramBotMicroservice: IFunction): IRestApi {
     // All constructs take these same three arguments : scope, id/name, props
     // defines an API Gateway REST API resource backed by our "telegrambot-api" function.
-    const telegramBotApi = new RestApi(this, "telegrambot-api", {
+    const TelegramRestAPI = new RestApi(this, "telegrambot-api", {
+      defaultCorsPreflightOptions: {
+        allowCredentials: false,
+        // Enable CORS policy to allow from any origin. Customize as needed.
+        allowHeaders: [
+          "Content-Type",
+          "X-Amz-Date",
+          "Authorization",
+          "X-Api-Key",
+        ],
+        allowMethods: ["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
+        allowOrigins: Cors.ALL_ORIGINS,
+      },
       deploy: false,
     });
 
-    telegramBotApi.root.addResource("bot").addMethod(
+    // Let's keep this as it as and use it for normal 'Hello World' Response with GET method integration with lamhda.
+    const telegramRootAPI = TelegramRestAPI.root.addResource("bot");
+
+    telegramRootAPI.addMethod(
       "GET",
       new LambdaIntegration(telegramBotMicroservice, {
         proxy: true,
       })
-    );
+    ); // GET /bot
+
+    // Lets add nested resource under /bot resource path and attach a POST method with same Lambda integration.
+    telegramRootAPI
+      .addResource("webhook")
+      .addMethod(
+        "POST",
+        new LambdaIntegration(telegramBotMicroservice, { proxy: true })
+      ); // POST /bot/webhook
 
     // All constructs take these same three arguments : scope, id/name, props
     const devDeploy = new Deployment(this, "dev-deployment", {
-      api: telegramBotApi,
+      api: TelegramRestAPI,
     });
 
     // All constructs take these same three arguments : scope, id/name, props
@@ -56,8 +77,8 @@ export class BotApiGateway extends Construct {
       stageName: "dev", // If not passed, by default it will be 'prod'
     });
 
-    console.log("Check inner properties of API", telegramBotApi);
+    console.log("Check inner properties of API", TelegramRestAPI);
 
-    return telegramBotApi.restApiId;
+    return TelegramRestAPI;
   }
 }
