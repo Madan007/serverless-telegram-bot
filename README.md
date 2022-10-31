@@ -71,6 +71,7 @@ Here you will learn to use CDK to deploy different AWS resources.
    ```
 
 1. ## :camera: Screenshot
+
    <div>
    <img width="1249" alt="image" src="https://user-images.githubusercontent.com/15178258/199100708-11c06cee-3d62-4063-9698-b81f01c67d82.png">
    </div>
@@ -88,6 +89,21 @@ This is not an exhaustive list, please carry out other necessary steps as maybe 
 ### 💡 Help/Suggestions or 🐛 Bugs
 
 Thank you for your interest in contributing to our project. Whether it is a bug report, new feature, correction, or additional documentation or solutions, we greatly value feedback and contributions from our community. [Start here][200]
+
+### :snowman: Built with ❤️ and
+
+- [AWS](https://aws.amazon.com/)
+- [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [Node.Js](https://nodejs.org/en/docs/)
+
+### :man: Author
+
+[Madan K](https://www.linkedin.com/in/madan-k-97606010a/)
+
+### :clipboard: License
+
+MIT
 
 ### 🏷️ Metadata
 
